@@ -4,4 +4,4 @@ This is a modified version of incompressible/simpleFoam referencing Sorensen(199
 and Saurev(2016).
 
 Next step:
-Casefiles for thromboFoam/sorensen.
+Casefiles for thrombo Foam/sorensen.
