@@ -153,12 +153,12 @@ volScalarField Omega
     dimensionedScalar("Omega", dimensionSet(0,0,0,0,0,0,0), 0.0)
 );
 
-Info<< "Reading field epsilon\n" << endl;
-volScalarField epsilon
+Info<< "Reading field eps\n" << endl;
+volScalarField eps
 (
     IOobject
     (
-        "epsilon",
+        "eps",
         runTime.timeName(),
         mesh,
         IOobject::NO_READ,

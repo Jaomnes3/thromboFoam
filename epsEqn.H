@@ -58,12 +58,12 @@ The following block of code calculates the probability of thrombosis within/on
 the surface of the thrombus. 
 ******************************************************************************/
 
-forAll(epsilon, cellI)
+forAll(eps, cellI)
 { 
     if (check[cellI] == 1.0)
         continue;
     
-    if (epsilon[cellI] >= epsilon_t.value())
+    if (eps[cellI] >= epsilon_t.value())
     {
         if (tau_w[cellI] >= tau_high_thr.value())
         {
@@ -85,7 +85,7 @@ forAll(epsilon, cellI)
         const labelList& adjCells = mesh.cellCells()[cellI];
         forAll(adjCells, i)
         {
-            if (epsilon[adjCells[i]] >= epsilon_t.value())
+            if (eps[adjCells[i]] >= epsilon_t.value())
             {
                 if (tau_w[cellI] >= tau_high_thr.value())
                 {
@@ -121,9 +121,9 @@ forAll(epsilon, cellI)
 Solve the epsilon equation
 ******************************************************************************/
 
-Info<< "Solving epsilon equation\n" << endl;
-solve(fvm::ddt(epsilon) == alpha_epsilon*P_TSP*(AP*AP) - fvm::Sp(beta_epsilon, epsilon));
-Info<< "Max/min epsilon: " << max(epsilon).value() << "/" << min(epsilon).value() << nl << endl;
+Info<< "Solving eps equation\n" << endl;
+solve(fvm::ddt(eps) == alpha_epsilon*P_TSP*(AP*AP) - fvm::Sp(beta_epsilon, eps));
+Info<< "Max/min eps: " << max(eps).value() << "/" << min(eps).value() << nl << endl;
 
 
 
