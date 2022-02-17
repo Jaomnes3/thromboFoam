@@ -35,6 +35,7 @@ Description
 #include "kinematicMomentumTransportModel.H"
 #include "simpleControl.H"
 #include "fvOptions.H"
+#include "wallFvPatch.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

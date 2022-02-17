@@ -6,12 +6,12 @@ Omega >> Kpa >> Gamma
 
 Info<< "\nCaulculating platelet activation rate kpa\n" << endl;
 
-forAll(Omega,[i])
+forAll(Omega,i)
 {
-    Omega[i] = ADP[i]/2.0 + TxA2[i]/0.6 + TRB[i]/0.1;
+    Omega[i] = ADP[i]/2.0 + TxA_2[i]/0.6 + TRB[i]/0.1;
 }
 
-forAll(k_pa,[i])
+forAll(k_pa,i)
 {
     if(Omega[i] < 1.0)
 	k_pa[i] = 0.0;
@@ -19,7 +19,7 @@ forAll(k_pa,[i])
 	k_pa[i] = Omega[i]/t_act.value();
 }
 
-forAll(Gamma,[i])
+forAll(Gamma,i)
 {
     Gamma[i] = k_1j.value()*H.value()*AT[i]/
                ( alpha.value()*K_AT.value()*K_T.value()
@@ -31,6 +31,9 @@ forAll(Gamma,[i])
 Calculation of shear stress by multiplying dynamic viscosity and 
 the norm of the velocity gradient.
 
+>>Turned out to be unnecessary, as the relevent parameter is 
+wall shear stress, denoted as WSS instead of tau_w.
+
 Copied from clotFoam by Saurev(2016).
 
 Interesting observations regarding OpenFoam coding:
@@ -38,7 +41,7 @@ Interesting observations regarding OpenFoam coding:
 	a += b >> a = a + b
 2. The xy separation of the tauTensor using the ~.xx() notation.
 ************************************************************/
-
+/*
 Info<<"n\Calculating mechanical activation\n" << endl;
 
 volTensorField tauTensor = nu*rho*fvc::grad(U);
@@ -58,6 +61,7 @@ forAll(tau,cellI)
     
     tau[cellI] = Foam::sqrt(tau[cellI]/3.0);
 }
+*/
 
 /************************************************************
 Chemical reactions for 7 species equations.
@@ -85,7 +89,7 @@ Info<< "Max/min thromboxane: " << max(TxA_2).value() << "/" << min(TxA_2).value(
 
 //Prothrombin
 Info<< "\nSolving PT equation" << endl;
-solve(fvm::ddt(PT) + fvm::di(phi,PT) == fvm::laplacian(D_PT,PT) - beta*PT* (phi_at*AP + phi_rt*RP));
+solve(fvm::ddt(PT) + fvm::div(phi,PT) == fvm::laplacian(D_PT,PT) - beta*PT* (phi_at*AP + phi_rt*RP));
 Info<< "Max/min prothrombin: " << max(PT).value() << "/" << min(PT).value() << nl << endl;
 
 //Thrombin
