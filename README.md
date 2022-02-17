@@ -4,5 +4,4 @@ This is a modified version of incompressible/simpleFoam referencing Sorensen(199
 and Saurev(2016).
 
 Next step:
-1. epsEqn.H
-2. createFields.H
+Casefiles for thromboFoam/sorensen.
