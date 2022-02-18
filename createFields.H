@@ -409,10 +409,10 @@ dimensionedScalar K_T
     transportProperties.lookup("K_T")
 );
 
-dimensionedScalar k
+dimensionedScalar k_const
 (
-    "k",
-    transportProperties.lookup("k")
+    "k_const",
+    transportProperties.lookup("k_const")
 );
 
 dimensionedScalar alpha_epsilon

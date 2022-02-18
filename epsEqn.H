@@ -3,6 +3,7 @@ Calculates the evolution of aggregation intensity over time.
 
 Wall shear stress tau_w
 *******************************************************/
+Info<<"Calculating wall shear stress\n"<<endl;
 
 tau_w = nu*rho*mag(fvc::grad(U));     //Wall shear stress in interior cells
 
@@ -34,8 +35,7 @@ forAll(patches, patchI)
 	    }
 	    else
 	    {
-	        P_TSP[faceCellI] = (tau_w[faceCellI]/tau_high_thr.value())* 
-			(Foam::exp((tau_w[faceCellI]-tau_low_thr.value())/(tau_high_thr.value() - tau_low_thr.value()))-1.0);
+	        P_TSP[faceCellI] = (tau_w[faceCellI]/tau_high_thr.value())*(Foam::exp((tau_w[faceCellI]-tau_low_thr.value())/(tau_high_thr.value() - tau_low_thr.value()))-1.0);
 	        P_TSP[faceCellI] /= (Foam::constant::mathematical::e - 1.0);
 	        P_TSP[faceCellI] = 1.0 - P_TSP[faceCellI];
 	    }
