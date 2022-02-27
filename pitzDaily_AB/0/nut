@@ -38,8 +38,7 @@ boundaryField
     }
     lowerWall
     {
-        type            nutkWallFunction;
-        value           uniform 0;
+        type            slip;
     }
     frontAndBack
     {

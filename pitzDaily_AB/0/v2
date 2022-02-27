@@ -37,8 +37,7 @@ boundaryField
     }
     lowerWall
     {
-        type            v2WallFunction;
-        value           $internalField;
+        type            slip;
     }
     frontAndBack
     {

@@ -36,8 +36,7 @@ boundaryField
     }
     lowerWall
     {
-        type            fWallFunction;
-        value           uniform 0;
+        type            slip;
     }
     frontAndBack
     {

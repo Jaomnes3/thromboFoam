@@ -41,7 +41,7 @@ boundaryField
 
     lowerWall
     {
-        type            noSlip;
+        type            slip;
     }
 
     frontAndBack

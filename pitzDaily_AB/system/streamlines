@@ -15,8 +15,8 @@ direction       both;
 seedSampleSet
 {
     type            lineUniform;
-    start           (-0.0205 0.001  0.00001);
-    end             (-0.0205 0.0251 0.00001);
+    start           (-0.0299 -0.0039  0.00001);
+    end             (-0.0299 0.0069 0.00001);
     nPoints         10;
     axis            x;
 }

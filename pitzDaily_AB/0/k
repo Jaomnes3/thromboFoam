@@ -37,8 +37,7 @@ boundaryField
     }
     lowerWall
     {
-        type            kqRWallFunction;
-        value           uniform 0.375;
+        type            slip;
     }
     frontAndBack
     {

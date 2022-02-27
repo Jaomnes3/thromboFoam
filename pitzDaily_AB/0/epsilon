@@ -37,8 +37,7 @@ boundaryField
     }
     lowerWall
     {
-        type            epsilonWallFunction;
-        value           uniform 14.855;
+        type            slip;
     }
     frontAndBack
     {

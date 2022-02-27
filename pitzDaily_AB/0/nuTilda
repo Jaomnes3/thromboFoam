@@ -38,7 +38,7 @@ boundaryField
 
     lowerWall
     {
-        type            zeroGradient;
+        type            slip;
     }
 
     frontAndBack
