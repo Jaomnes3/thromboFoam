@@ -38,8 +38,8 @@ FoamFile
     }
     lowerWall
     {
-        type            wall;
-        inGroups        List<word> 1(wall);
+        type            symmetryPlane;
+        inGroups        List<word> 1(symmetryPlane);
         nFaces          134;
         startFace       13153;
     }

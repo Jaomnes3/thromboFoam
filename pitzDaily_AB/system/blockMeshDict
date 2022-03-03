@@ -132,7 +132,7 @@ boundary
     }
     lowerWall
     {
-        type wall;
+        type symmetryPlane;
         faces
         (
             (0 1 13 12)

@@ -36,7 +36,7 @@ boundaryField
     }
     lowerWall
     {
-        type            slip;
+        type            symmetryPlane;
     }
     frontAndBack
     {
