@@ -7,7 +7,7 @@ FoamFile
     object      fvSchemes;
 }
 ddtSchemes{
-  default Euler;
+  default steadyState;
 }
 gradSchemes{
   default cellLimited Gauss linear 1;

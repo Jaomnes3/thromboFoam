@@ -7,16 +7,16 @@ FoamFile
     object      controlDict;
 }
 
-application     pimpleFoam;
-startFrom       startTime;
+application     simpleFoam;
+startFrom       latestTime;
 startTime       0;
 stopAt          endTime;
-endTime         200;
-deltaT          1;
-adjustTimeStep  yes;
+endTime         1000;
+deltaT          1.0;
+adjustTimeStep  no;
 maxCo           0.9;
 writeControl    timeStep;
-writeInterval   50;
+writeInterval   100;
 purgeWrite      0;
 writeFormat     ascii;
 writePrecision  6;
@@ -24,8 +24,3 @@ writeCompression off;
 timeFormat      general;
 timePrecision   6;
 runTimeModifiable true;
-
-functions
-{
-    #includeFunc residuals(U,p,k,epsilon);
-}

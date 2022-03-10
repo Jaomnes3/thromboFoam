@@ -131,7 +131,7 @@ castellatedMeshControls
   maxLocalCells 100000000;
   maxGlobalCells 100000000;
   minRefinementCells 1;
-  nCellsBetweenLevels 7;
+  nCellsBetweenLevels 3;
   resolveFeatureAngle 30;
   allowFreeStandingZoneFaces false;
 }

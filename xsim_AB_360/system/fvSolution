@@ -31,26 +31,15 @@ solvers{
         tolerance 1e-05;
         relTol 0.1;
     }
-    pFinal{
-        $p;
-        relTol 0;
-    }
-    UFinal{
-        $U;
-        relTol 0;
-    }
-    kFinal{
-        $k;
-        relTol 0;
-    }
-    epsilonFinal{
-        $epsilon;
-        relTol 0;
-    }
 }
-PIMPLE{
+SIMPLE{
     nNonOrthogonalCorrectors 0;
-    nCorrectors 2;
+    residualControl{
+        p 0.01;
+        U 0.001;
+        k 0.001;
+        epsilon 0.001;
+    }
 }
 relaxationFactors{
     fields{
